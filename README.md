@@ -6,4 +6,4 @@
 5. secretKey = ''  引号之中填写你的百度翻译 api 密钥；
 6. 保存文件，放入Comfyui/custom_nodes/ 文件夹中；
 7. 节点在Prompt translate中。
-8. ![sketch map](./Sketch Map.png)
+8. ![sketch map](Sketch Map.png)
