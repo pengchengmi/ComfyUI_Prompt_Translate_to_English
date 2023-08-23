@@ -26,7 +26,7 @@ class BaiduTranslate:
 
     FUNCTION = "translation"
 
-    CATEGORY = "Promat-translate"
+    CATEGORY = "Prompt-translate"
 
     def translation(self, text):
         fromLang = 'auto'  # 原文语种
