@@ -2,7 +2,8 @@
 # ComfyUI Prompt Translate to English
     introduction:
     1. I created two translation nodes, which can be both installed or only one of them can be used；
-    2. first one is `BaiduTranslateApi`, it's used BaiduTranslate developer account on the official website of Baidu Translator, which can be used for a long time by oneself;
+    2. first one is `BaiduTranslateApi`, it's used BaiduTranslate developer account 
+       on the official website of Baidu Translator, which can be used for a long time by oneself;
     3. second is `BaiduTranslate`, Connected to the Api of Baidu Translate， Need install requirements；
     4. unable to preview the prompt words in Comfyui, i dont know how to do it. If you have any good ideas, Let me know!
     5. I didn't use Google Translate because I need to use it in China.
