@@ -9,15 +9,16 @@ import os
 
 # BaiduTranslateApi version 使用API需要修改的地方
 ####################################
-appid = ''  # 填写你的appid | fill in your appid
-secretKey = ''  # 填写你的密钥 | fill in your secretKey
+appid = '20230817001784543'  # 填写你的appid | fill in your appid
+secretKey = 'M9Pttk4NhFX5ypGr0g8O'  # 填写你的密钥 | fill in your secretKey
 httpClient = None
 myurl = '/api/trans/vip/translate'
 
 # 读取百度翻译的加盐算法
-js_file_path = os.path.dirname(__file__) + '/BaiduTranslate_sign.js'
+js_file_path = os.path.dirname(__file__) + '/js/BaiduTranslate_sign.js'
 with open(js_file_path, 'r', encoding='utf-8') as f:
     sign_js = execjs.compile(f.read())
+
 
 class BaiduTransApi:
     def __init__(self):
@@ -25,7 +26,6 @@ class BaiduTransApi:
 
     @classmethod
     def INPUT_TYPES(s):
-
         return {
             "required": {"text": ("STRING", {"multiline": True})},
         }
@@ -68,6 +68,7 @@ class BaiduTransApi:
             translate_result = q
 
         return (translate_result,)
+
 
 class BaiduTranslate:
     def __init__(self):
@@ -122,14 +123,36 @@ class BaiduTranslate:
         return (translate_result,)
 
 
+class PreviewText:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "text": ("STRING", {"forceInput": True}),
+                },
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "preview_text"
+    OUTPUT_NODE = True
+    CATEGORY = "Prompt Translate"
+
+    def preview_text(self, text):
+        return {"ui": {"string": [text, ]}}
+
+
 # NOTE: names should be globally unique
 NODE_CLASS_MAPPINGS = {
     "BaiduTransApi": BaiduTransApi,
     "BaiduTranslate": BaiduTranslate,
+    "PreviewText": PreviewText,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "BaiduTransApi": "翻译Api  Auto to English",
     "BaiduTranslate": "翻译  Auto to English",
+    "PreviewText": "文本预览-PreviewText"
 }
-
