@@ -9,8 +9,8 @@ import os
 
 # BaiduTranslateApi version 使用API需要修改的地方
 ####################################
-appid = '20230817001784543'  # 填写你的appid | fill in your appid
-secretKey = 'M9Pttk4NhFX5ypGr0g8O'  # 填写你的密钥 | fill in your secretKey
+appid = ''  # 填写你的appid | fill in your appid
+secretKey = ''  # 填写你的密钥 | fill in your secretKey
 httpClient = None
 myurl = '/api/trans/vip/translate'
 
