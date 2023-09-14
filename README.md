@@ -1,4 +1,4 @@
- |  [English](#1-baidutranslateapi-install) | [中文教程](#comfyui-提示词翻译插件) | [视频教程](https://www.bilibili.com/video/BV1qw411Q7U9/?share_source=copy_web&vd_source=09df7e2da9d48d5fb9dcfe4ed69f071b) |
+ |  [English](#1-baidutranslateapi-install) | [中文教程](#comfyui-提示词翻译插件) | [视频教程](https://www.bilibili.com/video/BV1qw411Q7U9/?share_source=copy_web&vd_source=09df7e2da9d48d5fb9dcfe4ed69f071b) | [更新内容](#历史更新内容) |
 # ComfyUI Prompt Translate to English
     introduction:
     1. I created two translation nodes, which can be both installed or only one of them can be used；
@@ -18,6 +18,9 @@
 1. If you are using your own deployed Python environment and Comfyui, not use author's integration package，run `install.bat`；
 2. If you are using the author compressed Comfyui integration package，run `embedded_install.bat`；
 
+## 3. `PreviewText` Nodes
+1. Preview translate result。
+
 ## 3. How to use
 1. Nodes in Prompt translate list，if you use own Api, use `翻译Api auto to English`；
 2. you can install both, whatever use.
@@ -32,14 +35,25 @@
 1. 下载 **Baidutranslate** 压缩包，放到`custom_nodes`文件夹中；
 2. 先去百度翻译，在上面点开 ‘[翻译API](https://fanyi-api.baidu.com/?fr=pcHeader)’ 注册一个开发者账号，获得你的`appid`和`secretKey`；
 3. 记事本/其他编辑器打开文件`BaiduTranslate.py`；
-4. 第11行 `appid = ""` 引号之中填写你的百度翻译`apiid`；
-5. 第12行`secretKey = ""`  引号之中填写你的百度翻译 `secretKey`；
+4. 第11行 `appid = ""` **引号**之中填写你的百度翻译`apiid`；
+5. 第12行`secretKey = ""`  **引号**之中填写你的百度翻译 `secretKey`；
 6. 保存文件.
 ## 2. `BaiduTranslate`的安装教程
 1. 如果使用的是 自己部署的python环境和Comfyui，不是下载的作者的整合包，则运行`install.bat`；
 2. 如果使用的是 作者压缩的Comfyui整合包，则运行`embedded_install.bat` --- 大多数都是这个！！；
 
-## 3. 使用教程
+## 3. `PreviewText` 节点
+1. 预览翻译的结果；
+2. 感谢B站网友给的建议，以及B站用户【阿米吉】提供的代码与思路。
+
+## 4. 使用教程
 1. 节点在Prompt translate列表中，如果用自己的Api，直接用`翻译Api auto to English`；
 2. 也可以两个都安装，随便用一个，本质上没啥区别。
 ![节点使用演示](./img/BaiduTranslate.png)
+
+# 历史更新内容
+### 2023-9-01
+1. 更新了文本预览节点
+
+### 2023-09-14
+1. 更新 可以在翻译节点内，选择翻译成语言，这样可以用作反推提示词。
