@@ -9,8 +9,8 @@ import os
 
 # BaiduTranslateApi version 使用API需要修改的地方
 ####################################
-appid = ''  # 填写你的appid | fill in your appid
-secretKey = ''  # 填写你的密钥 | fill in your secretKey
+appid = '20230817001784543'  # 填写你的appid | fill in your appid
+secretKey = 'M9Pttk4NhFX5ypGr0g8O'  # 填写你的密钥 | fill in your secretKey
 httpClient = None
 myurl = '/api/trans/vip/translate'
 
@@ -27,16 +27,20 @@ class BaiduTransApi:
     @classmethod
     def INPUT_TYPES(s):
         return {
-            "required": {"text": ("STRING", {"multiline": True})},
+            "required": {
+                "text": ("STRING", {"multiline": True}),
+                "choose_to_language": (["en", "zh"], {"default": "en"}),
+            },
+
         }
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "translationapi"
     CATEGORY = "Prompt Translate"
 
-    def translationapi(self, text):
+    def translationapi(self, choose_to_language, text):
         fromLang = 'auto'  # 原文语种，可以写auto，让百度自动识别
-        toLang = 'en'  # 译文语种，固定为 english
+        toLang = choose_to_language  # 译文语种，固定为 english
         salt = random.randint(32768, 65536)
         q = text
 
@@ -77,17 +81,20 @@ class BaiduTranslate:
     @classmethod
     def INPUT_TYPES(s):
         return {
-            "required": {"text": ("STRING", {"multiline": True})},
+            "required": {
+                "text": ("STRING", {"multiline": True}),
+                "choose_to_language": (["en", "zh"], {"default": "en"}),
+            },
         }
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "translation"  # 必须和下面的函数同名。
     CATEGORY = "Prompt Translate"
 
-    def translation(self, text):
+    def translation(self, choose_to_language, text):
 
         From = 'auto'
-        To = 'en'
+        To = choose_to_language
 
         token = '012cd082bf1f821bb7d94981bf6d477a'
         url = 'https://fanyi.baidu.com/v2transapi'
@@ -152,7 +159,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "BaiduTransApi": "翻译Api  Auto to English",
-    "BaiduTranslate": "翻译  Auto to English",
+    "BaiduTransApi": "翻译Api  Auto to your choose language",
+    "BaiduTranslate": "翻译  Auto to choose language",
     "PreviewText": "文本预览-PreviewText"
 }
