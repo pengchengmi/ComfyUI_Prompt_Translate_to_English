@@ -21,7 +21,7 @@
 ## 3. `PreviewText` Nodes
 1. Preview translate result。
 
-## 3. How to use
+## 4. How to use
 1. Nodes in Prompt translate list，if you use own Api, use `翻译Api auto to English`；
 2. you can install both, whatever use.
 ![节点使用演示](./img/BaiduTranslate.png)
