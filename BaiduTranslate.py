@@ -143,12 +143,15 @@ class PreviewText:
         }
 
     RETURN_TYPES = ()
+    INPUT_IS_LIST = True
     FUNCTION = "preview_text"
     OUTPUT_NODE = True
     CATEGORY = "Prompt Translate"
+    # OUTPUT_IS_LIST = True
 
     def preview_text(self, text):
-        return {"ui": {"string": [text, ]}}
+
+        return {"ui": {"text": text}, "result": (text,)}
 
 
 # NOTE: names should be globally unique
