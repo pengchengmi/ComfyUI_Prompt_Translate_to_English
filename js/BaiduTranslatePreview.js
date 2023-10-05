@@ -4,44 +4,52 @@ import { ComfyWidgets } from "../scripts/widgets.js";
 app.registerExtension({
   name: "Comfy.BaiduTranslateNode",
   async beforeRegisterNodeDef(nodeType, nodeData, app) {
-    if (nodeData.name === "PreviewText") {
-      const onNodeCreated = nodeType.prototype.onNodeCreated;
+		if (nodeData.name === "PreviewText") {
+			function populate(text) {
+				if (this.widgets) {
+					const pos = this.widgets.findIndex((w) => w.name === "text");
+					if (pos !== -1) {
+						for (let i = pos; i < this.widgets.length; i++) {
+							this.widgets[i].onRemove?.();
+						}
+						this.widgets.length = pos;
+					}
+				}
 
-      nodeType.prototype.onNodeCreated = function () {
-        const r = onNodeCreated
-          ? onNodeCreated.apply(this, arguments)
-          : undefined;
+				for (const list of text) {
+					const w = ComfyWidgets["STRING"](this, "text", ["STRING", { multiline: true }], app).widget;
+					w.inputEl.readOnly = true;
+					w.inputEl.style.opacity = 0.6;
+					w.value = list;
+				}
 
-        let PreviewTextNode = app.graph._nodes.filter(
-            (wi) => wi.type === "PreviewText"
-          ),
-          nodeName = `PreviewText_${PreviewTextNode.length}`;
+				requestAnimationFrame(() => {
+					const sz = this.computeSize();
+					if (sz[0] < this.size[0]) {
+						sz[0] = this.size[0];
+					}
+					if (sz[1] < this.size[1]) {
+						sz[1] = this.size[1];
+					}
+					this.onResize?.(sz);
+					app.graph.setDirtyCanvas(true, false);
+				});
+			}
 
-        console.log(`Create PreviewText: ${nodeName}`);
+			// When the node is executed we will be sent the input text, display this in the widget
+			const onExecuted = nodeType.prototype.onExecuted;
+			nodeType.prototype.onExecuted = function (message) {
+				onExecuted?.apply(this, arguments);
+				populate.call(this, message.text);
+			};
 
-        ComfyWidgets.STRING(
-          this,
-          nodeName,
-          [
-            "STRING",
-            {
-              default: "",
-              placeholder: "翻译结果 / Translate results in here",
-              multiline: true,
-            },
-          ],
-          app
-        );
-
-
-        this.onDrawBackground = function () {
-          const output = app.nodeOutputs[this.id + ""];
-          if (output && output.string) {
-            this.widgets[0].inputEl.value = output.string[0];
-          }
-        };
-        return r;
-      };
-    }
-  },
+			const onConfigure = nodeType.prototype.onConfigure;
+			nodeType.prototype.onConfigure = function () {
+				onConfigure?.apply(this, arguments);
+				if (this.widgets_values?.length) {
+					populate.call(this, this.widgets_values);
+				}
+			};
+		}
+	},
 });
