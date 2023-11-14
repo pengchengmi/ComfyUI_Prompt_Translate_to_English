@@ -10,7 +10,8 @@ import os
 
 # 读取百度翻译的加盐算法
 script_dir = os.path.dirname(os.path.abspath(__file__))
-js_file_path = os.path.join(script_dir, 'js', 'BaiduTranslate_sign.js')
+parent_dir = os.path.dirname(script_dir)
+js_file_path = os.path.join(parent_dir, 'js', 'BaiduTranslate_sign.js')
 with open(js_file_path, 'r', encoding='utf-8') as f:
     sign_js = execjs.compile(f.read())
 
