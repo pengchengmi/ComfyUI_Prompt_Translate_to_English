@@ -26,5 +26,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "PreviewText": "文本预览-PreviewText"
+    "PreviewText": "文本预览"
 }
