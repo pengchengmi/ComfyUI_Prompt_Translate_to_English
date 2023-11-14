@@ -1,4 +1,22 @@
-from .BaiduTranslate import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+from .AliTransApi import NODE_CLASS_MAPPINGS as AliTransApi_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AliTransApi_NODE_DISPLAY_NAME_MAPPINGS
+from .BaiduTransApi import NODE_CLASS_MAPPINGS as BaiduTransApi_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as BaiduTransApi_NODE_DISPLAY_NAME_MAPPINGS
+from .BaiduTranslate import NODE_CLASS_MAPPINGS as BaiduTranslate_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as BaiduTranslate_NODE_DISPLAY_NAME_MAPPINGS
+from .PreviewText import NODE_CLASS_MAPPINGS as PreviewText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PreviewText_NODE_DISPLAY_NAME_MAPPINGS
+
+NODE_CLASS_MAPPINGS = {
+    **AliTransApi_NODE_CLASS_MAPPINGS,
+    **BaiduTransApi_NODE_CLASS_MAPPINGS,
+    **BaiduTranslate_NODE_CLASS_MAPPINGS,
+    **PreviewText_NODE_CLASS_MAPPINGS
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    **AliTransApi_NODE_DISPLAY_NAME_MAPPINGS,
+    **BaiduTransApi_NODE_DISPLAY_NAME_MAPPINGS,
+    **BaiduTranslate_NODE_DISPLAY_NAME_MAPPINGS,
+    **PreviewText_NODE_DISPLAY_NAME_MAPPINGS
+}
+
 import os
 import __main__
 import shutil
@@ -13,7 +31,7 @@ Comfyui_web_dir_path = os.path.join(os.path.dirname(os.path.relpath(__main__.__f
 Comfyui_js_path = os.path.join(Comfyui_web_dir_path, 'extensions')
 
 # 节点名称
-Translate_Nodes_Name = 'Prompt Translate'
+Translate_Nodes_Name = '提示词翻译'
 Translate_Js_Name = 'BaiduTranslatePreview.js'
 
 
