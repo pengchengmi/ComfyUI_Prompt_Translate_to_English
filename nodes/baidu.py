@@ -9,7 +9,8 @@ except ImportError:
 import os
 
 # 读取百度翻译的加盐算法
-js_file_path = os.path.dirname(__file__) + '/js/BaiduTranslate_sign.js'
+script_dir = os.path.dirname(os.path.abspath(__file__))
+js_file_path = os.path.join(script_dir, 'js', 'BaiduTranslate_sign.js')
 with open(js_file_path, 'r', encoding='utf-8') as f:
     sign_js = execjs.compile(f.read())
 
