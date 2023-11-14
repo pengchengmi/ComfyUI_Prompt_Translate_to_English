@@ -1,20 +1,20 @@
-from .AliTransApi import NODE_CLASS_MAPPINGS as AliTransApi_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AliTransApi_NODE_DISPLAY_NAME_MAPPINGS
-from .BaiduTransApi import NODE_CLASS_MAPPINGS as BaiduTransApi_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as BaiduTransApi_NODE_DISPLAY_NAME_MAPPINGS
-from .BaiduTranslate import NODE_CLASS_MAPPINGS as BaiduTranslate_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as BaiduTranslate_NODE_DISPLAY_NAME_MAPPINGS
-from .PreviewText import NODE_CLASS_MAPPINGS as PreviewText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PreviewText_NODE_DISPLAY_NAME_MAPPINGS
+from .nodes.aliapi import NODE_CLASS_MAPPINGS as aliapi_c, NODE_DISPLAY_NAME_MAPPINGS as aliapi_n
+from .nodes.baiduapi import NODE_CLASS_MAPPINGS as baidu_c, NODE_DISPLAY_NAME_MAPPINGS as baiduapi_n
+from .nodes.baidu import NODE_CLASS_MAPPINGS as baiduapi_c, NODE_DISPLAY_NAME_MAPPINGS as baidu_n
+from .nodes.previewtext import NODE_CLASS_MAPPINGS as preview_c, NODE_DISPLAY_NAME_MAPPINGS as preview_n
 
 NODE_CLASS_MAPPINGS = {
-    **AliTransApi_NODE_CLASS_MAPPINGS,
-    **BaiduTransApi_NODE_CLASS_MAPPINGS,
-    **BaiduTranslate_NODE_CLASS_MAPPINGS,
-    **PreviewText_NODE_CLASS_MAPPINGS
+    **aliapi_c,
+    **baidu_c,
+    **baiduapi_c,
+    **preview_c
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    **AliTransApi_NODE_DISPLAY_NAME_MAPPINGS,
-    **BaiduTransApi_NODE_DISPLAY_NAME_MAPPINGS,
-    **BaiduTranslate_NODE_DISPLAY_NAME_MAPPINGS,
-    **PreviewText_NODE_DISPLAY_NAME_MAPPINGS
+    **aliapi_n,
+    **baiduapi_n,
+    **baidu_n,
+    **preview_n
 }
 
 import os
