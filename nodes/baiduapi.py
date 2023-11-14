@@ -4,7 +4,7 @@ import urllib
 import random
 import json
 import requests
-from .config import *
+from ..config import *
 
 httpClient = None
 myurl = '/api/trans/vip/translate'
