@@ -1,25 +1,27 @@
+from .AliTransApi import NODE_CLASS_MAPPINGS as AliTransApi_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AliTransApi_NODE_DISPLAY_NAME_MAPPINGS
+from .BaiduTransApi import NODE_CLASS_MAPPINGS as BaiduTransApi_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as BaiduTransApi_NODE_DISPLAY_NAME_MAPPINGS
+from .BaiduTranslate import NODE_CLASS_MAPPINGS as BaiduTranslate_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as BaiduTranslate_NODE_DISPLAY_NAME_MAPPINGS
+from .PreviewText import NODE_CLASS_MAPPINGS as PreviewText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PreviewText_NODE_DISPLAY_NAME_MAPPINGS
+
+NODE_CLASS_MAPPINGS = {
+    **AliTransApi_NODE_CLASS_MAPPINGS,
+    **BaiduTransApi_NODE_CLASS_MAPPINGS,
+    **BaiduTranslate_NODE_CLASS_MAPPINGS,
+    **PreviewText_NODE_CLASS_MAPPINGS
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    **AliTransApi_NODE_DISPLAY_NAME_MAPPINGS,
+    **BaiduTransApi_NODE_DISPLAY_NAME_MAPPINGS,
+    **BaiduTranslate_NODE_DISPLAY_NAME_MAPPINGS,
+    **PreviewText_NODE_DISPLAY_NAME_MAPPINGS
+}
+
 import os
 import __main__
 import shutil
-import importlib
-import os
 
-NODE_CLASS_MAPPINGS = {}
-NODE_DISPLAY_NAME_MAPPINGS = {}
-
-# 获取当前目录下所有以'trans-'开头的Python文件
-files = [f for f in os.listdir('.') if f.startswith('trans-') and f.endswith('.py')]
-
-for file in files:
-    module_name = file[:-3]
-    module = importlib.import_module(module_name)
-
-    node_class_mappings = getattr(module, 'NODE_CLASS_MAPPINGS', {})
-    NODE_CLASS_MAPPINGS.update(node_class_mappings)
-
-    node_display_name_mappings = getattr(module, 'NODE_DISPLAY_NAME_MAPPINGS', {})
-    NODE_DISPLAY_NAME_MAPPINGS.update(node_display_name_mappings)
-
+# 获取js的文件路径
 BaiduTS_js_dir_path = os.path.dirname(os.path.relpath(__file__))
 BaiduTS_js_path = os.path.join(BaiduTS_js_dir_path, 'js')
 
