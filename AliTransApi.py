@@ -20,12 +20,7 @@ from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_alimt20181012 import models as alimt_20181012_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
-
-# 使用阿里API需要修改的地方
-####################################
-ALIBABA_CLOUD_ACCESS_KEY_ID = ""
-ALIBABA_CLOUD_ACCESS_KEY_SECRET = ""
-
+from .config import *
 
 class AlibabaTransApi:
     def __init__(self):
@@ -45,8 +40,8 @@ class AlibabaTransApi:
     CATEGORY = "提示词翻译"
 
     def alitranslationapi(self, choose_to_language, text):
-        access_key_id = ALIBABA_CLOUD_ACCESS_KEY_ID
-        access_key_secret = ALIBABA_CLOUD_ACCESS_KEY_SECRET
+        access_key_id = ali_key_id
+        access_key_secret = ali_key_secret
 
         client = self.create_client(access_key_id, access_key_secret)
 
