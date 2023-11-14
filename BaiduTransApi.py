@@ -27,7 +27,7 @@ class BaiduTransApi:
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "baidutranslationapi"
-    CATEGORY = "提示词翻译"
+    CATEGORY = "Prompt Translate"
 
     def baidutranslationapi(self, choose_to_language, text):
         fromLang = 'auto'  # 原文语种，可以写auto，让百度自动识别
@@ -70,5 +70,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "BaiduTransApi": "翻译Api  Auto to your choose language"
+    "BaiduTransApi": "百度翻译Api"
 }
