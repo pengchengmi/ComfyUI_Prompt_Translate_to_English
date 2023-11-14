@@ -28,7 +28,7 @@ class BaiduTranslate:
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "baidutranslation"  # 必须和下面的函数同名。
-    CATEGORY = "提示词翻译"
+    CATEGORY = "Prompt Translate"
 
     def baidutranslation(self, choose_to_language, text):
 
@@ -74,5 +74,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "BaiduTranslate": "翻译  Auto to choose language"
+    "BaiduTranslate": "百度翻译"
 }
