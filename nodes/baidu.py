@@ -60,8 +60,7 @@ class BaiduTranslate:
             baidutranslate = requests.post(url, headers=headers, data=data).json()
             translate_result = baidutranslate['trans_result']['data'][0]['dst']
             print("翻译结果如下—————————————————————————————————————")
-            print('翻译结果是--' + translate_result)
-            print("Translate results on the top———————————————————")
+            print(translate_result)
         except Exception as e:
             print(e)
             translate_result = "Translate failed"

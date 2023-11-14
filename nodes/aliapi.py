@@ -62,7 +62,6 @@ class AlibabaTransApi:
             #translate_result = resp.Data.Translated
             print("翻译结果如下—————————————————————————————————————")
             print(translate_result)
-            print("Translate results on the top———————————————————")
         except Exception as e:
             print(e)
             translate_result = "Translate failed"

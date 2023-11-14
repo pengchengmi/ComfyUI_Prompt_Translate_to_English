@@ -51,7 +51,6 @@ class BaiduTransApi:
             # print(result)
             print("翻译结果如下—————————————————————————————————————")
             print(result)
-            print("Translate results on the top———————————————————")
             translate_result = result
 
         except Exception as e:
