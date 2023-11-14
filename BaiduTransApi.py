@@ -3,7 +3,7 @@ import hashlib
 import urllib
 import random
 import json
-import request
+import requests
 
 # BaiduTranslateApi version 使用API需要修改的地方
 ####################################
