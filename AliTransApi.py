@@ -20,6 +20,7 @@ from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_alimt20181012 import models as alimt_20181012_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
+from .config import *
 
 # 使用阿里API需要修改的地方
 ####################################
