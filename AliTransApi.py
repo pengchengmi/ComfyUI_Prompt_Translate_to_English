@@ -22,12 +22,6 @@ from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
 from .config import *
 
-# 使用阿里API需要修改的地方
-####################################
-ALIBABA_CLOUD_ACCESS_KEY_ID = ""
-ALIBABA_CLOUD_ACCESS_KEY_SECRET = ""
-
-
 class AlibabaTransApi:
     def __init__(self):
         pass
