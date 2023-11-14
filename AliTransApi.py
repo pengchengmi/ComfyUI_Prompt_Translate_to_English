@@ -42,7 +42,7 @@ class AlibabaTransApi:
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "alitranslationapi"
-    CATEGORY = "Prompt Translate"
+    CATEGORY = "提示词翻译"
 
     def alitranslationapi(self, choose_to_language, text):
         access_key_id = ALIBABA_CLOUD_ACCESS_KEY_ID

@@ -27,7 +27,7 @@ class BaiduTransApi:
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "baidutranslationapi"
-    CATEGORY = "Prompt Translate"
+    CATEGORY = "提示词翻译"
 
     def baidutranslationapi(self, choose_to_language, text):
         fromLang = 'auto'  # 原文语种，可以写auto，让百度自动识别

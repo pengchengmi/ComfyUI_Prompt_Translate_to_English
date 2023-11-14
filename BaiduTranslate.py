@@ -28,7 +28,7 @@ class BaiduTranslate:
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "baidutranslation"  # 必须和下面的函数同名。
-    CATEGORY = "Prompt Translate"
+    CATEGORY = "提示词翻译"
 
     def baidutranslation(self, choose_to_language, text):
 
