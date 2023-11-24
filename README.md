@@ -17,9 +17,10 @@
 4. Fill your `apiid` in quotation marks of `appid = ""` ；
 4. Fill your `secretKey` in quotation marks of `secretKey = ""`；
 6. Save file.
-## 2. `BaiduTranslate` install
-1. If you are using your own deployed Python environment and Comfyui, not use author's integration package，run `install.bat`；
-2. If you are using the author compressed Comfyui integration package，run `embedded_install.bat`；
+
+## 2. ‘AliyunApi’ install
+1. go config.py;
+2. fill apiid and key.
 
 ## 3. `PreviewText` Nodes
 1. Preview translate result。
@@ -41,9 +42,9 @@
 4. `appid = ""` **引号**之中填写你的百度翻译`apiid`；
 5. `secretKey = ""`  **引号**之中填写你的百度翻译 `secretKey`；
 6. 保存文件.
-## 2. `BaiduTranslate`的安装教程
-1. 如果使用的是 自己部署的python环境和Comfyui，不是下载的作者的整合包，则运行`install.bat`；
-2. 如果使用的是 作者压缩的Comfyui整合包，则运行`embedded_install.bat` --- 大多数都是这个！！；
+
+## 2. '阿里云'Api的安装教程
+1. 和百度云一样。
 
 ## 3. `PreviewText` 节点
 1. 预览翻译的结果；
