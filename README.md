@@ -1,5 +1,5 @@
 # 阿里云、百度爬虫 + 百度API翻译支持
-    已无需手动安装，还需要手动添加 API 密钥+ key
+    已无需手动安装，在config.py 文件中，添加 阿里云/百度翻译 API的密钥+ key
 
  |  [English](#1-baidutranslateapi-install) | [中文教程](#comfyui-提示词翻译插件) | [视频教程](https://www.bilibili.com/video/BV1qw411Q7U9/?share_source=copy_web&vd_source=09df7e2da9d48d5fb9dcfe4ed69f071b) | [更新内容](#历史更新内容) |
 # ComfyUI Prompt Translate to English
@@ -63,3 +63,6 @@
 
 ### 2023-10-05
 1. 更新了文本预览的实现方式，看看还有没有 冻结的问题。
+
+### 2023-11-18
+1. 大佬shiertier更新支持阿里云，并做优化。
