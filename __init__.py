@@ -1,8 +1,25 @@
-from .BaiduTranslate import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+from .nodes.aliapi import NODE_CLASS_MAPPINGS as aliapi_c, NODE_DISPLAY_NAME_MAPPINGS as aliapi_n
+from .nodes.baiduapi import NODE_CLASS_MAPPINGS as baidu_c, NODE_DISPLAY_NAME_MAPPINGS as baiduapi_n
+from .nodes.baidu import NODE_CLASS_MAPPINGS as baiduapi_c, NODE_DISPLAY_NAME_MAPPINGS as baidu_n
+from .nodes.previewtext import NODE_CLASS_MAPPINGS as preview_c, NODE_DISPLAY_NAME_MAPPINGS as preview_n
+
+NODE_CLASS_MAPPINGS = {
+    **aliapi_c,
+    **baidu_c,
+    **baiduapi_c,
+    **preview_c
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    **aliapi_n,
+    **baiduapi_n,
+    **baidu_n,
+    **preview_n
+}
+
 import os
 import __main__
 import shutil
-
 
 # 获取js的文件路径
 BaiduTS_js_dir_path = os.path.dirname(os.path.relpath(__file__))
@@ -13,7 +30,7 @@ Comfyui_web_dir_path = os.path.join(os.path.dirname(os.path.relpath(__main__.__f
 Comfyui_js_path = os.path.join(Comfyui_web_dir_path, 'extensions')
 
 # 节点名称
-Translate_Nodes_Name = 'Prompt Translate'
+Translate_Nodes_Name = '提示词翻译'
 Translate_Js_Name = 'BaiduTranslatePreview.js'
 
 
