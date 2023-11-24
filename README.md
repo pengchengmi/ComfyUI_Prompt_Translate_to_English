@@ -13,9 +13,9 @@
 ## 1. `BaiduTranslateApi` install
 1. Download **Baidutranslate** zip，Place in `custom_nodes` folder, Unzip it；
 2. Go to ‘[Baidu Translate Api](https://fanyi-api.baidu.com/?fr=pcHeader)’ and register a developer account，get your `appid` and `secretKey`；
-3. Open the file `BaiduTranslate.py` in Notepad/other editors;
-4. Fill your `apiid` in quotation marks of `appid = ""` at line 11；
-4. Fill your `secretKey` in quotation marks of `secretKey = ""` at line 11；
+3. Open the file `config.py` in Notepad/other editors;
+4. Fill your `apiid` in quotation marks of `appid = ""` ；
+4. Fill your `secretKey` in quotation marks of `secretKey = ""`；
 6. Save file.
 ## 2. `BaiduTranslate` install
 1. If you are using your own deployed Python environment and Comfyui, not use author's integration package，run `install.bat`；
@@ -37,9 +37,9 @@
 ## 1. `BaiduTranslateApi`的安装教程
 1. 下载 **Baidutranslate** 压缩包，放到`custom_nodes`文件夹中；
 2. 先去百度翻译，在上面点开 ‘[翻译API](https://fanyi-api.baidu.com/?fr=pcHeader)’ 注册一个开发者账号，获得你的`appid`和`secretKey`；
-3. 记事本/其他编辑器打开文件`BaiduTranslate.py`；
-4. 第11行 `appid = ""` **引号**之中填写你的百度翻译`apiid`；
-5. 第12行`secretKey = ""`  **引号**之中填写你的百度翻译 `secretKey`；
+3. 记事本/其他编辑器打开文件`config.py`；
+4. `appid = ""` **引号**之中填写你的百度翻译`apiid`；
+5. `secretKey = ""`  **引号**之中填写你的百度翻译 `secretKey`；
 6. 保存文件.
 ## 2. `BaiduTranslate`的安装教程
 1. 如果使用的是 自己部署的python环境和Comfyui，不是下载的作者的整合包，则运行`install.bat`；
