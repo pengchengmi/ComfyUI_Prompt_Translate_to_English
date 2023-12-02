@@ -1,6 +1,8 @@
 # 阿里云、百度爬虫 + 百度API翻译支持
     已无需手动安装，在config.py 文件中，添加 阿里云/百度翻译 API的密钥+ key
 
+    只适配了 部署到自己安装的版本，不适合 windows一键启动版本，我修改一下。
+
  |  [English](#1-baidutranslateapi-install) | [中文教程](#comfyui-提示词翻译插件) | [视频教程](https://www.bilibili.com/video/BV1qw411Q7U9/?share_source=copy_web&vd_source=09df7e2da9d48d5fb9dcfe4ed69f071b) | [更新内容](#历史更新内容) |
 # ComfyUI Prompt Translate to English
     introduction:
