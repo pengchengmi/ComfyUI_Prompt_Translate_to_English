@@ -4,7 +4,7 @@ import subprocess
 try:
     import execjs
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'pyexecjs'])
+    subprocess.check_call([sys.executable, '-s' '-m', 'pip', 'install', 'pyexecjs'], shell=True)
     import execjs
 import os
 

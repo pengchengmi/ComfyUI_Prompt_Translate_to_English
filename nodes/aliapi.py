@@ -4,18 +4,19 @@ import subprocess
 try:
     import requests
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'requests'])
+    subprocess.check_call([sys.executable,'-s', '-m', 'pip', 'install', 'requests'], shell=True)
     import requests
 try:
     from alibabacloud_alimt20181012.client import Client as alimt20181012Client
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'alibabacloud_alimt20181012'])
+    subprocess.check_call([sys.executable, '-s', '-m', 'pip', 'install', 'alibabacloud_alimt20181012==1.1.0'], shell=True)
     from alibabacloud_alimt20181012.client import Client as alimt20181012Client
 try:
     from alibabacloud_tea_console.client import Client as ConsoleClient
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'alibabacloud_tea_console'])
+    subprocess.check_call([sys.executable, '-s', '-m', 'pip', 'install', 'alibabacloud_tea_console'], shell=True)
     from alibabacloud_tea_console.client import Client as ConsoleClient
+
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_alimt20181012 import models as alimt_20181012_models
 from alibabacloud_tea_util import models as util_models
